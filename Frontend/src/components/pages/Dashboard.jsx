@@ -1,10 +1,12 @@
 import React from "react";
-import { Card } from "./Card";
+import { Cards } from "./Cards";
+
 
 export function Dashboard(props) {
+
   return (
     <>
-    <Navbar />
+    
       <div className="flex">
         <div className=" p-3 space-y-2 w-72 dark:text-gray-50 dark:bg-gray-800">
           <div className="flex items-center p-4 space-x-4">
@@ -153,10 +155,8 @@ export function Dashboard(props) {
 
         <div className="cards">
           <div className="card-Container flex flex-wrap items-center justify-center  gap-5 m-7">
-           <Card/>
-           <Card/>
-           <Card/>
-           <Card/>
+           <Cards/>
+
           </div>
         </div>
       </div>

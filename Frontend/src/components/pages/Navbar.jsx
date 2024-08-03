@@ -8,7 +8,7 @@ export function Navbar(props) {
         <>
             <header className="bg-slate-950 flex justify-between capitalize px-6 py-[20px] text-white gap-2 w-full">
           <div className="flex gap-4">
-            <Link typeof='{/}'>
+            <Link to ='/'>
             <p className="cursor-pointer flex items-center gap-2 md:hover:text-orange-700">
               <svg
                 className="w-6 h-6"
@@ -26,32 +26,35 @@ export function Navbar(props) {
               Home
             </p>
             </Link>
-            <Link to = {"/Dashboard"}>
+            <Link to = "/Dashboard">
             <p className="cursor-pointer md:hover:text-orange-700">
               Go To Dashboard
             </p></Link>
-            <Link to = {"/"}>
+            <Link to = "/">
             <p className="cursor-pointer">Dot</p></Link>
           </div>
           <nav>
             <ul className="hidden gap-4 md:flex">
-            <Link to = {"/About"}>
+            <Link to = "/About">
               <li className="cursor-pointer md:hover:text-orange-700">
                 About Us
               </li>
               </Link>
-              <Link to ={"/Contact"}>
+              <Link to ="/Contact">
               <li className="cursor-pointer md:hover:text-orange-700">
                 Contact Us
               </li>
               </Link>
-              
+              <Link to ="/Register">
               <li className="cursor-pointer md:hover:text-orange-700">
                 Sign Up
               </li>
+              </Link>
+              <Link to ="/LoginForm">
               <li className="cursor-pointer md:hover:text-orange-700">
                 Log in
               </li>
+              </Link>
             </ul>
             <button className="md:hidden">Show</button>
           </nav>

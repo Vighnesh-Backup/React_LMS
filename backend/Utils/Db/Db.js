@@ -1,19 +1,17 @@
 import mongoose from "mongoose";
 
+const ConnectionString = "mongodb://localhost:27017/CetpaProjectBypremSir";
 
-const connString = "mongodb+srv://asdfggjkl736:<password>@cluster0.cmmj1ot.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+if (!ConnectionString) throw new Error("missing connection string");
 
-if(!connString) throw new Error("Missing connection string ");
+async function db() {
+  const connect = await mongoose.connect(ConnectionString);
 
-async function db(){
-    const connect = await mongoose.connect(connString);
-     
-    if(connect){
-        console.log(" conection sucess");
-    }
-    else{
-        console.log(" conection failed")
-    }
-};
+  if (connect) {
+    console.log("Connected Successfully");
+  } else {
+    console.log("connection Failed");
+  }
+}
 
 export default db;

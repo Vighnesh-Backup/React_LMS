@@ -10,6 +10,8 @@ export function Cards(props) {
         <Card />
         <Card />
         <Card />
+        <Card />
+        
       </div>
     </>
   );

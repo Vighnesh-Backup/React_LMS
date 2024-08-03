@@ -1,39 +1,41 @@
 import express from "express";
-import 'dotenv/config';
-import db from "./Utils/Db/Db.js";
-import mongoose from "mongoose";
-const app = express();
-// port red from .env
+import "dotenv/config";
+import db from "./utils/db/db.js";
+import cors from "cors";
+
 const port = process.env.PORT;
+const app = express();
 
-// db import her 
+// middleware
+//app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
+//! db import here
 db();
 
 // ! Model Here
 
-const schema = new mongoose.Schema({
-    name: String,
-    email: String,
-  });
-  
-app.listen(port, ()=>{
-    console.log(`${port} par server chal raha h `);
-})
+import route from "./utils/routes/routes.js";
+app.use("/api/v1", route);
 
-//API here
+// ! API's Here
 
-app.post("/createUser", async (req, res) => {
-    const { name, email } = req.body;
-    if (name && email) {
-      const data = new userModel({
-        name: name,
-        email: email,
-      });
-      const d = await data.save();
-      res.status(201).json({ message: "user created successfully ", result: d });
-    } else {
-      res.status(400).json({ message: "all fields are required" });
-    }
-  });
+app.listen(port, () => {
+  console.log(`server is running on http://localhost:${port}`);
+});
 
+// API for Login form
+// app.post("/createUser", async (req, res) => {
+//   const { email, password } = req.body;
+//   if ( email && password ) {
+//     const data = new userModel({
+//       email: email,
+//       password: password,
+//     });
+//     const d = await data.save();
+//     res.status(201).json({ message: "user created successfully ", result: d });
+//   } else {
+//     res.status(400).json({ message: "all fields are required" });
+//   }
+// });

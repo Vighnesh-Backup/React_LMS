@@ -1,4 +1,6 @@
 import React from "react";
+import { Navbar } from "./Navbar";
+import { Footer } from "./Footer";
 
 export function Contact(props) {
   return (
@@ -67,7 +69,7 @@ export function Contact(props) {
         </form>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

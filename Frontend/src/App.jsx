@@ -9,6 +9,7 @@ import { Home } from "./components/pages/Home";
 import { Footer } from "./components/pages/Footer";
 import { Cards } from "./components/pages/Cards";
 import { BrowserRouter,Routes,Route,Link } from "react-router-dom";
+import AllUsers from "./components/pages/AllUsers";
 
 export default function App(props) {
   return (
@@ -21,8 +22,10 @@ export default function App(props) {
         <Route path = "/Dashboard" element = {<Dashboard />} />
         <Route path = "/Register" element = {<RegisterForm />} /> 
         <Route path ="/LoginForm" element = {<LoginForm />}/> 
+        <Route path ="/AllUsers"  element = {<AllUsers />}/>
       </Routes>
       </BrowserRouter>
+      
     </>
   );
 }
